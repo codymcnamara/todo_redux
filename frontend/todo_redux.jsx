@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import configureStore from './store/store'
+// import configureStore from './store/store'
 
 const Main = React.createClass({
   render() {
