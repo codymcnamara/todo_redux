@@ -10,7 +10,8 @@ const Main = React.createClass({
   }
 });
 
-const store = configureStore();
-window.store = store;
+// const store = configureStore();
+// window.store = store;
+
 
 render(<Main/>, document.getElementById('content'));
