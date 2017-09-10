@@ -4,7 +4,6 @@ import { render } from 'react-dom';
 import App from './app'
 import configureStore from '../store/store'
 
-window.store = configureStore();
 
 const Root = ({ store }) => (
   <Provider store={ store }>
@@ -12,6 +11,7 @@ const Root = ({ store }) => (
   </Provider>
 );
 
-render(<Root/>, document.getElementById('content'));
+let store = configureStore();
+render(<Root store={store}/>, document.getElementById('content'));
 
 export default Root;

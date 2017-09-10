@@ -1,10 +1,14 @@
 import React from 'react';
 import { render } from 'react-dom';
+import TodoListContainer from './todo_list/todo_list_container';
 
 const App = React.createClass({
   render(){
     return(
-      <h1>App title</h1>
+      <div>
+        <h1>App title</h1>
+        <TodoListContainer />
+      </div>
     )
   }
 });
