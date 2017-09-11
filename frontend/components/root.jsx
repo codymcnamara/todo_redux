@@ -12,6 +12,7 @@ const Root = ({ store }) => (
 );
 
 let store = configureStore();
+window.store = store;
 render(<Root store={store}/>, document.getElementById('content'));
 
 export default Root;
