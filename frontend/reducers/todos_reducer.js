@@ -1,5 +1,6 @@
 import {RECEIVE_TODOS} from '../action/todo_actions'
 import {RECEIVE_TODO} from '../action/todo_actions'
+import {REMOVE_TODO} from '../action/todo_actions'
 
 const initialState = {
   1: {
@@ -24,13 +25,11 @@ const todosReducer = (state = initialState, action) => {
       action.todos.forEach( todo => nextState[todo.id] = todo);
       return nextState;
     case RECEIVE_TODO:
-      // Object.entries(action.todos).forEach(([key, value]) => {
-      //     newState[key] = value;
-      // });
-      // newState[action.todo.id] = action.todo;
-      // const newTodo = Hash.new()
-
       return Object.assign({}, state, {[action.todo.id]: action.todo});
+    case REMOVE_TODO:
+      nextState = Object.assign({}, state);
+      delete nextState[action.todo.id];
+      return nextState;
     default:
       return state;
   }
